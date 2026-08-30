@@ -1,14 +1,14 @@
 {
-  "name": "@deepseek-ai/dsh-web-search-duckduckgo",
-  "description": "DuckDuckGo Lite (keyless HTML) search provider for the DeepSeek Harness web capability seam (ctx.web)",
-  "version": "0.1.1-rc.2",
+  "name": "@deepseek-ai/dsh-web-search-fallback",
+  "description": "Cascade search provider for the DeepSeek Harness web capability seam (ctx.web): DuckDuckGo Lite quality first, Mojeek reliability as fallback",
+  "version": "0.1.2-alpha.1",
   "publishConfig": {
     "access": "public"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
-    "directory": "packages/web/web-search-duckduckgo"
+    "directory": "packages/web/web-search-fallback"
   },
   "type": "module",
   "main": "lib/index.js",
@@ -34,7 +34,10 @@
   "peerDependencies": {
     "@deepseek-ai/dsh-invariants": "workspace:^",
     "@deepseek-ai/dsh-web": "workspace:^",
-    "@deepseek-ai/cordis": "workspace:^"
+    "@deepseek-ai/dsh-web-search-duckduckgo": "workspace:^",
+    "@deepseek-ai/dsh-web-search-mojeek": "workspace:^",
+    "@deepseek-ai/cordis": "workspace:^",
+    "@deepseek-ai/schemastery": "workspace:^"
   },
   "dependencies": {
     "@deepseek-ai/schemastery": "workspace:^"
@@ -42,6 +45,8 @@
   "devDependencies": {
     "@deepseek-ai/dsh-invariants": "workspace:^",
     "@deepseek-ai/dsh-web": "workspace:^",
+    "@deepseek-ai/dsh-web-search-duckduckgo": "workspace:^",
+    "@deepseek-ai/dsh-web-search-mojeek": "workspace:^",
     "@deepseek-ai/cordis": "workspace:^",
     "@deepseek-ai/schemastery": "workspace:^"
   }

@@ -254,6 +254,8 @@
     { "path": "./packages/web/web-search-perplexity" },
     { "path": "./packages/web/web-search-deepseek" },
     { "path": "./packages/web/web-search-duckduckgo" },
+    { "path": "./packages/web/web-search-mojeek" },
+    { "path": "./packages/web/web-search-fallback" },
     { "path": "./packages/web/web-fetch-http" },
     { "path": "./packages/web/tool-web" },
     { "path": "./packages/spill/spill" },

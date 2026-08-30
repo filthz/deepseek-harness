@@ -437,6 +437,18 @@
         thresholds: [3, 5, 8]
         argumentsPreviewChars: 500
 
+    # Policy stop for goal continuation rounds that repeat the same output:
+    # after `repeats` consecutive near-identical rounds the goal is disarmed
+    # (automatic continuation stops; the durable phase stays active) or, with
+    # `action: block`, durably blocked with the `goal-round-loop` reason.
+    - id: goal-round-loop-detector
+      name: '@deepseek-ai/dsh-goal-round-loop-detector'
+      config:
+        repeats: 3
+        similarity: 0.9
+        minChars: 32
+        action: disarm
+
     # Every mode enables the stable model-facing web_search tool. The Web app's
     # per-agent presets additionally enable web_fetch; other products opt in by
     # overriding tool-web. DeepSeek search resolves the same DEEPSEEK_API_KEY

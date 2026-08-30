@@ -1,14 +1,14 @@
 {
-  "name": "@deepseek-ai/dsh-web-search-duckduckgo",
-  "description": "DuckDuckGo Lite (keyless HTML) search provider for the DeepSeek Harness web capability seam (ctx.web)",
-  "version": "0.1.1-rc.2",
+  "name": "@deepseek-ai/dsh-web-search-mojeek",
+  "description": "Mojeek-backed (keyless HTML) search provider for the DeepSeek Harness web capability seam (ctx.web)",
+  "version": "0.1.2-alpha.1",
   "publishConfig": {
     "access": "public"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
-    "directory": "packages/web/web-search-duckduckgo"
+    "directory": "packages/web/web-search-mojeek"
   },
   "type": "module",
   "main": "lib/index.js",

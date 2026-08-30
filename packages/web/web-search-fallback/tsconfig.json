@@ -19,6 +19,12 @@
     },
     {
       "path": "../../runtime-diagnostics/invariants"
+    },
+    {
+      "path": "../web-search-duckduckgo"
+    },
+    {
+      "path": "../web-search-mojeek"
     }
   ]
 }

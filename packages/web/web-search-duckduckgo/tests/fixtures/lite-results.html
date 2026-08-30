@@ -1,0 +1,726 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=1;">
+  <meta name="referrer" content="origin">
+  <meta name="HandheldFriendly" content="true" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>openwrt mptcp at DuckDuckGo</title>
+  <link title="DuckDuckGo (Lite)" type="application/opensearchdescription+xml" rel="search" href="//duckduckgo.com/opensearch_lite_v2.xml">
+  <link href="//duckduckgo.com/favicon.ico" rel="shortcut icon" />
+  <link rel="icon" href="//duckduckgo.com/favicon.ico" type="image/x-icon" />
+  <link id="icon60" rel="apple-touch-icon" href="//duckduckgo.com/assets/icons/meta/DDG-iOS-icon_60x60.png?v=2"/>
+  <link id="icon76" rel="apple-touch-icon" sizes="76x76" href="//duckduckgo.com/assets/icons/meta/DDG-iOS-icon_76x76.png?v=2"/>
+  <link id="icon120" rel="apple-touch-icon" sizes="120x120" href="//duckduckgo.com/assets/icons/meta/DDG-iOS-icon_120x120.png?v=2"/>
+  <link id="icon152" rel="apple-touch-icon" sizes="152x152" href="//duckduckgo.com/assets/icons/meta/DDG-iOS-icon_152x152.png?v=2"/>
+  <link rel="image_src" href="//duckduckgo.com/assets/icons/meta/DDG-icon_256x256.png">
+  <link rel="stylesheet" media="handheld, all" href="//duckduckgo.com/dist/lr.48ddfe4eadf6a534e93f.css" type="text/css"/>
+</head>
+
+<body>
+  <p class='extra'>&nbsp;</p>
+  <div class="header">
+    DuckDuckGo
+  </div>
+  <p class='extra'>&nbsp;</p>
+
+  <form action="/lite/" method="post">
+      <input class='query' type="text" size="40" name="q" value="openwrt mptcp">
+      <input class='submit' type="submit" value="Search">
+
+
+
+
+
+      <div class="filters">
+        <select class="submit" name="kl">
+
+            <option value="" >All Regions</option>
+
+            <option value="ar-es" >Argentina</option>
+
+            <option value="au-en" >Australia</option>
+
+            <option value="at-de" >Austria</option>
+
+            <option value="be-fr" >Belgium (fr)</option>
+
+            <option value="be-nl" >Belgium (nl)</option>
+
+            <option value="br-pt" >Brazil</option>
+
+            <option value="bg-bg" >Bulgaria</option>
+
+            <option value="ca-en" >Canada (en)</option>
+
+            <option value="ca-fr" >Canada (fr)</option>
+
+            <option value="ct-ca" >Catalonia</option>
+
+            <option value="cl-es" >Chile</option>
+
+            <option value="cn-zh" >China</option>
+
+            <option value="co-es" >Colombia</option>
+
+            <option value="hr-hr" >Croatia</option>
+
+            <option value="cz-cs" >Czech Republic</option>
+
+            <option value="dk-da" >Denmark</option>
+
+            <option value="ee-et" >Estonia</option>
+
+            <option value="fi-fi" >Finland</option>
+
+            <option value="fr-fr" >France</option>
+
+            <option value="de-de" >Germany</option>
+
+            <option value="gr-el" >Greece</option>
+
+            <option value="hk-tzh" >Hong Kong</option>
+
+            <option value="hu-hu" >Hungary</option>
+
+            <option value="is-is" >Iceland</option>
+
+            <option value="in-en" >India (en)</option>
+
+            <option value="id-en" >Indonesia (en)</option>
+
+            <option value="ie-en" >Ireland</option>
+
+            <option value="il-en" >Israel (en)</option>
+
+            <option value="it-it" >Italy</option>
+
+            <option value="jp-jp" >Japan</option>
+
+            <option value="kr-kr" >Korea</option>
+
+            <option value="lv-lv" >Latvia</option>
+
+            <option value="lt-lt" >Lithuania</option>
+
+            <option value="my-en" >Malaysia (en)</option>
+
+            <option value="mx-es" >Mexico</option>
+
+            <option value="nl-nl" >Netherlands</option>
+
+            <option value="nz-en" >New Zealand</option>
+
+            <option value="no-no" >Norway</option>
+
+            <option value="pk-en" >Pakistan (en)</option>
+
+            <option value="pe-es" >Peru</option>
+
+            <option value="ph-en" >Philippines (en)</option>
+
+            <option value="pl-pl" >Poland</option>
+
+            <option value="pt-pt" >Portugal</option>
+
+            <option value="ro-ro" >Romania</option>
+
+            <option value="ru-ru" >Russia</option>
+
+            <option value="xa-ar" >Saudi Arabia</option>
+
+            <option value="sg-en" >Singapore</option>
+
+            <option value="sk-sk" >Slovakia</option>
+
+            <option value="sl-sl" >Slovenia</option>
+
+            <option value="za-en" >South Africa</option>
+
+            <option value="es-ca" >Spain (ca)</option>
+
+            <option value="es-es" >Spain (es)</option>
+
+            <option value="se-sv" >Sweden</option>
+
+            <option value="ch-de" >Switzerland (de)</option>
+
+            <option value="ch-fr" >Switzerland (fr)</option>
+
+            <option value="tw-tzh" >Taiwan</option>
+
+            <option value="th-en" >Thailand (en)</option>
+
+            <option value="tr-tr" >Turkey</option>
+
+            <option value="us-en" >US (English)</option>
+
+            <option value="us-es" >US (Spanish)</option>
+
+            <option value="ua-uk" >Ukraine</option>
+
+            <option value="uk-en" >United Kingdom</option>
+
+            <option value="vn-en" >Vietnam (en)</option>
+
+        </select>
+
+        <select class="submit" name="df">
+
+            <option value="" selected>Any Time</option>
+
+            <option value="d" >Past Day</option>
+
+            <option value="w" >Past Week</option>
+
+            <option value="m" >Past Month</option>
+
+            <option value="y" >Past Year</option>
+
+        </select>
+      </div>
+  </form>
+
+
+    <p class="extra">&nbsp;</p>
+    <table border="0">
+      <tr>
+        <td>
+
+        </td>
+        <td>
+
+            <!-- Next Page Button Sub-template -->
+<form class="next_form" action="/lite/" method="post">
+    <input type="submit" class='navbutton' value="Next Page &gt;">
+    <input type="hidden" name="q" value="openwrt mptcp">
+    <input type="hidden" name="s" value="10">
+    <input type="hidden" name="nextParams" value="">
+    <input type="hidden" name="v" value="l">
+    <input type="hidden" name="o" value="json">
+    <input type="hidden" name="dc" value="11">
+    <input type="hidden" name="api" value="d.js">
+    <input type="hidden" name="vqd" value="4-295645025370334585218538937153630796460">
+    &nbsp;&nbsp;&nbsp;&nbsp;
+
+
+
+      <input name="kl" value="wt-wt" type="hidden">
+
+
+
+
+</form>
+
+        </td>
+      </tr>
+    </table>
+
+
+
+
+  <p class='extra'>&nbsp;</p>
+
+  <table border="0">
+
+  </table>
+
+  <table border="0">
+
+
+      <!-- Web results are present -->
+
+
+            <tr>
+
+                <td valign="top">
+
+                    1.&nbsp;
+
+                </td>
+                <td>
+                  <a rel="nofollow" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fopenwrt.org%2Fdocs%2Fguide%2Duser%2Fnetwork%2Fmptcp%3Fs%5B%5D%3Dp.txt&amp;rut=a7c603c046d88de866ede903c0ca3f145d62138de54a596a1390d8c8830daedf" class='result-link'>Multipath TCP and OpenWrt</a>
+                </td>
+
+            </tr>
+
+
+
+                <!-- Only show abstract separately if there's a click URL (not EOF) -->
+                <tr>
+                  <td>&nbsp;&nbsp;&nbsp;</td>
+                  <td class='result-snippet'>
+                    Multipath TCP Multipath TCP (<b>MPTCP</b>) is an effort towards enabling the simultaneous use of several IP -addresses/interfaces by a modification of TCP that presents a regular TCP interface to applications, while in fact spreading data across several sub-flows. Benefits of this include better resource utilisation, better throughput and smoother reaction to failures.
+                  </td>
+                </tr>
+
+
+
+
+              <tr>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td>
+                  <span class='link-text'>openwrt.org/docs/guide-user/network/mptcp?s[]=p.txt</span>
+
+                    &nbsp;&nbsp;&nbsp;
+                    <span class='timestamp'>2024-12-19T00:00:00.0000000</span>
+
+                </td>
+              </tr>
+
+
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+
+
+
+
+            <tr>
+
+                <td valign="top">
+
+                    2.&nbsp;
+
+                </td>
+                <td>
+                  <a rel="nofollow" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fforum.openwrt.org%2Ft%2Ftutorial%2Dbuild%2Dopenwrt%2Dwith%2Dmultipath%2Dtcp%2F84325&amp;rut=e4b64171fb28bc3a37474a87ed834e325f2275d5ec5dde500879bc2ed8274ef7" class='result-link'>[Tutorial] Build OpenWrt with Multipath TCP</a>
+                </td>
+
+            </tr>
+
+
+
+                <!-- Only show abstract separately if there's a click URL (not EOF) -->
+                <tr>
+                  <td>&nbsp;&nbsp;&nbsp;</td>
+                  <td class='result-snippet'>
+                    This tutorial explains building <b>OpenWrt</b> images with out-of-tree <b>MPTCP</b> (MPTCPv0 &amp; MPTCPv1) support. Disclaimer: We can no longer use out-of-tree <b>MPTCP</b> on <b>OpenWrt</b> 22.03 and newer since upstream <b>MPTCP</b> (supports only MPTCPv1) is included instead. I will write a tutorial for building <b>OpenWrt</b> with upstream <b>MPTCP</b> in the future.
+                  </td>
+                </tr>
+
+
+
+
+              <tr>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td>
+                  <span class='link-text'>forum.openwrt.org/t/tutorial-build-openwrt-with-multipath-tcp/84325</span>
+
+                </td>
+              </tr>
+
+
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+
+
+
+
+            <tr>
+
+                <td valign="top">
+
+                    3.&nbsp;
+
+                </td>
+                <td>
+                  <a rel="nofollow" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fgithub.com%2FYsurac%2Fopenmptcprouter&amp;rut=0902ce0d07cf58ee6eaaa00a52824b24b8c2ace42adb87e444eba77abb7d0c08" class='result-link'>GitHub - Ysurac/openmptcprouter: OpenMPTCProuter is an open source ...</a>
+                </td>
+
+            </tr>
+
+
+
+                <!-- Only show abstract separately if there's a click URL (not EOF) -->
+                <tr>
+                  <td>&nbsp;&nbsp;&nbsp;</td>
+                  <td class='result-snippet'>
+                    OpenMPTCProuter is an open source solution to aggregate multiple internet connections using Multipath TCP (<b>MPTCP</b>) on <b>OpenWrt</b> - Ysurac/openmptcprouter
+                  </td>
+                </tr>
+
+
+
+
+              <tr>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td>
+                  <span class='link-text'>github.com/Ysurac/openmptcprouter</span>
+
+                </td>
+              </tr>
+
+
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+
+
+
+
+            <tr>
+
+                <td valign="top">
+
+                    4.&nbsp;
+
+                </td>
+                <td>
+                  <a rel="nofollow" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fgithub.com%2FBigNerd95%2FOpenWRT_MPTCP&amp;rut=14451b8bd9d0325f84a3d9e4a5b2c86100b1397bfac7b42e26292d4a7e43c255" class='result-link'>GitHub - BigNerd95/OpenWRT_MPTCP: OpenWRT with Multipath TCP (MPTCP ...</a>
+                </td>
+
+            </tr>
+
+
+
+                <!-- Only show abstract separately if there's a click URL (not EOF) -->
+                <tr>
+                  <td>&nbsp;&nbsp;&nbsp;</td>
+                  <td class='result-snippet'>
+                    <b>OpenWRT</b> with Multipath TCP (<b>MPTCP</b>) support. Contribute to BigNerd95/<b>OpenWRT_MPTCP</b> development by creating an account on GitHub.
+                  </td>
+                </tr>
+
+
+
+
+              <tr>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td>
+                  <span class='link-text'>github.com/BigNerd95/OpenWRT_MPTCP</span>
+
+                </td>
+              </tr>
+
+
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+
+
+
+
+            <tr>
+
+                <td valign="top">
+
+                    5.&nbsp;
+
+                </td>
+                <td>
+                  <a rel="nofollow" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.openmptcprouter.com%2F&amp;rut=619554a7adcf473d30eece3f0de40c7f21d20b2255862e08e516a56b07a9eb9b" class='result-link'>OpenMPTCProuter - Internet connection bonding - Home</a>
+                </td>
+
+            </tr>
+
+
+
+                <!-- Only show abstract separately if there's a click URL (not EOF) -->
+                <tr>
+                  <td>&nbsp;&nbsp;&nbsp;</td>
+                  <td class='result-snippet'>
+                    OpenMPTCProuter OpenMPTCProuter use MultiPath TCP (<b>MPTCP</b>) to really aggregate multiple Internet connections and <b>OpenWrt</b>. A simple diagram to describe how OpenMPTCProuter is working.
+                  </td>
+                </tr>
+
+
+
+
+              <tr>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td>
+                  <span class='link-text'>www.openmptcprouter.com</span>
+
+                </td>
+              </tr>
+
+
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+
+
+
+
+            <tr>
+
+                <td valign="top">
+
+                    6.&nbsp;
+
+                </td>
+                <td>
+                  <a rel="nofollow" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fmultipath%2Dtcp.org%2Fpmwiki.php%2FUsers%2FOpenWRT&amp;rut=17a5bd1d1f2bd248828456113592bcc3e9367bdf29e6c50026df09b2772939ce" class='result-link'>Linux Kernel implementation : Users - Open WRT browse - MultiPath TCP</a>
+                </td>
+
+            </tr>
+
+
+
+                <!-- Only show abstract separately if there's a click URL (not EOF) -->
+                <tr>
+                  <td>&nbsp;&nbsp;&nbsp;</td>
+                  <td class='result-snippet'>
+                    OpenMPTCProuter: Yannick Chabanois published install-scripts at https://www.openmptcprouter.com. <b>OpenWRT</b> 14.07 - Barrier Breaker github by Mario Krüger with explanations on the <b>OpenWRT</b>-wiki. (based on <b>MPTCP</b> v0.89.x) Another tutorial for <b>MPTCP</b> v0.90 is available on Andrea Ghittino&#x27;s blog.
+                  </td>
+                </tr>
+
+
+
+
+              <tr>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td>
+                  <span class='link-text'>multipath-tcp.org/pmwiki.php/Users/OpenWRT</span>
+
+                </td>
+              </tr>
+
+
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+
+
+
+
+            <tr>
+
+                <td valign="top">
+
+                    7.&nbsp;
+
+                </td>
+                <td>
+                  <a rel="nofollow" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fforum.openwrt.org%2Ft%2Fconfiguring%2Dmptcp%2Din%2Dopenwrt%2F48683&amp;rut=f1480dcd90f0d47e684eca62835cb474f840140ec8b619454eb2e88739c77e18" class='result-link'>Configuring MPTCP in OpenWrt</a>
+                </td>
+
+            </tr>
+
+
+
+                <!-- Only show abstract separately if there's a click URL (not EOF) -->
+                <tr>
+                  <td>&nbsp;&nbsp;&nbsp;</td>
+                  <td class='result-snippet'>
+                    Configuring <b>MPTCP</b> in <b>OpenWrt</b> Installing and Using <b>OpenWrt</b> 1.5k views 1 link Nov 2019 1 / 6
+                  </td>
+                </tr>
+
+
+
+
+              <tr>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td>
+                  <span class='link-text'>forum.openwrt.org/t/configuring-mptcp-in-openwrt/48683</span>
+
+                </td>
+              </tr>
+
+
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+
+
+
+
+            <tr>
+
+                <td valign="top">
+
+                    8.&nbsp;
+
+                </td>
+                <td>
+                  <a rel="nofollow" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.openwrt.pro%2Fpost%2D654.html&amp;rut=fc5da2c8e18b063d8d059178a19b63bb8a7e541f768e558aeb4b5b849cc92885" class='result-link'>OpenWrt上基于mptcp、tproxy的聚合流量简明教程</a>
+                </td>
+
+            </tr>
+
+
+
+                <!-- Only show abstract separately if there's a click URL (not EOF) -->
+                <tr>
+                  <td>&nbsp;&nbsp;&nbsp;</td>
+                  <td class='result-snippet'>
+                    需要在make menuconfig中选中如下packageMPTCPv0LuCI Collections luci-sslLuCI Applications luci-app-wireguard
+                  </td>
+                </tr>
+
+
+
+
+              <tr>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td>
+                  <span class='link-text'>www.openwrt.pro/post-654.html</span>
+
+                </td>
+              </tr>
+
+
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+
+
+
+
+            <tr>
+
+                <td valign="top">
+
+                    9.&nbsp;
+
+                </td>
+                <td>
+                  <a rel="nofollow" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fblog.csdn.net%2Fm0_54683626%2Farticle%2Fdetails%2F117533227&amp;rut=9a365f04e8953248fdac10e9df0794a8238c1e6120d3869b085da301f321091d" class='result-link'>开源聚合路由 OpenMPTCProuter 配置使用-CSDN博客</a>
+                </td>
+
+            </tr>
+
+
+
+                <!-- Only show abstract separately if there's a click URL (not EOF) -->
+                <tr>
+                  <td>&nbsp;&nbsp;&nbsp;</td>
+                  <td class='result-snippet'>
+                    本文介绍OpenMPTCProuter聚合路由器的配置方法。它基于OpenWrt用MPTCP实现多网络聚合，需router和VPS配合。详细说明了OpenMPTCProuter聚合路由器固件在树莓派、X86主机的安装，VPS在香港及大陆区域服务器的安装，以及路由管理后台的设置等内容。
+                  </td>
+                </tr>
+
+
+
+
+              <tr>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td>
+                  <span class='link-text'>blog.csdn.net/m0_54683626/article/details/117533227</span>
+
+                </td>
+              </tr>
+
+
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+
+
+
+
+            <tr>
+
+                <td valign="top">
+
+                    10.&nbsp;
+
+                </td>
+                <td>
+                  <a rel="nofollow" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fdillonbaird.io%2Farticles%2Fmptcpbonding%2F&amp;rut=851a1e8475786d7ecf05c1c427320eaebf9c038973e35ca0da300c0828fd3d76" class='result-link'>Multi-WAN Bonding with OpenMPTCProuter · DillonBaird.io</a>
+                </td>
+
+            </tr>
+
+
+
+                <!-- Only show abstract separately if there's a click URL (not EOF) -->
+                <tr>
+                  <td>&nbsp;&nbsp;&nbsp;</td>
+                  <td class='result-snippet'>
+                    Explore how to leverage Multi-Path TCP (<b>MPTCP</b>) for bonding multiple internet connections using OpenMPTCProuter, enhancing bandwidth and reliability for remote work, especially on a boat.
+                  </td>
+                </tr>
+
+
+
+
+              <tr>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td>
+                  <span class='link-text'>dillonbaird.io/articles/mptcpbonding/</span>
+
+                </td>
+              </tr>
+
+
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+
+
+
+
+
+
+
+      <tr>
+        <td colspan=2>
+
+
+            <!-- Next Page Button Sub-template -->
+<form class="next_form" action="/lite/" method="post">
+    <input type="submit" class='navbutton' value="Next Page &gt;">
+    <input type="hidden" name="q" value="openwrt mptcp">
+    <input type="hidden" name="s" value="10">
+    <input type="hidden" name="nextParams" value="">
+    <input type="hidden" name="v" value="l">
+    <input type="hidden" name="o" value="json">
+    <input type="hidden" name="dc" value="11">
+    <input type="hidden" name="api" value="d.js">
+    <input type="hidden" name="vqd" value="4-295645025370334585218538937153630796460">
+    &nbsp;&nbsp;&nbsp;&nbsp;
+
+
+
+      <input name="kl" value="wt-wt" type="hidden">
+
+
+
+
+</form>
+
+
+        </td>
+      </tr>
+
+  </table>
+
+  <p class='extra'>&nbsp;</p>
+
+  <form action="/lite/" method="post">
+      <input class='query' type="text" size="40" name="q" value="openwrt mptcp" >
+      <input class='submit' type="submit" value="Search">
+
+
+
+
+
+        <input name="kl" value="wt-wt" type="hidden">
+
+  </form>
+
+  <p class='extra'>&nbsp;</p>
+
+
+    <img src="//duckduckgo.com/t/sl_l"/>
+
+  <div id='end-spacer'>&nbsp;</div>
+
+</body>
+</html>
